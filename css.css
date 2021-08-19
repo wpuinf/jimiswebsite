@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Teko:wght@500&display=swap');
+.header {
+    width: 100%;
+    position: fixed;        
+    background: #383434;
+    padding: 10px 0;
+    color: #fff;
+    top: 0;
+}
+.intro {
+    background-color: #a200ff;
+    line-height: 50%;
+}
+.frueh {
+    background-color: #d9ff00;
+}
+.apple {
+    background-color:#00ffc8
+}
+.andere {
+    background-color: #ff0000;
+}
+.tod {
+    background-color: #ff00d4;
+}
+nav a{
+    font-family: "Ubuntu", sans-serif;
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 25px;
+    display: inline-block;
+}
+nav a:hover{
+    color: rgb(255, 0, 0);
+}
+html {
+scroll-behavior: smooth;
+}
+.title {
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 75px;
+}
+.subtitle {
+    text-align: center;
+    font-family: "Teko", sans-serif;
+    font-size: 40px;
+}
+.text {
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    line-height: 150%;
+    font-size: 25px;
+}
+.centerimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+/*Das ist das erste mal, dass ich es alleine Schaffe, CSS zu machen...*/
