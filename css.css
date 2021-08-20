@@ -11,20 +11,26 @@
     top: 0;
 }
 .intro {
-    background-color: #a200ff;
+    background-color: #264653;
     line-height: 50%;
 }
 .frueh {
-    background-color: #d9ff00;
+    background-color: #2a9d8f;
 }
 .apple {
-    background-color:#00ffc8
+    background-color:#e9c46a;
 }
 .andere {
-    background-color: #ff0000;
+    background-color: #f4a261;
 }
 .tod {
-    background-color: #ff00d4;
+    background-color: #e76f51;
+}
+.out {
+    background-color: #1f1d19;
+    color:#fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
 }
 nav a{
     font-family: "Ubuntu", sans-serif;

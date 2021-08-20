@@ -12,11 +12,15 @@
         <button onclick="runHorst()">
             Ausführen
         </button></h3>
+        <h2 class="subtitle">Ausgabe:</h2>
+    </div>
+    <div id="output" class="out">
     </div>
 </body>
 <script>
     function runHorst(){
     var text = document.getElementById("horstIn").value;
+    var divvv = document.getElementById('output');
 var variables = {};
 const keywords = ['schreib', 'var']
 
@@ -30,7 +34,8 @@ var interpret = function(text){
     var word = words[i];
 
     if(word == 'schreib'){
-      document.write(getString());
+      var ress = getString();
+      divvv.innerHTML += "> " + text + "<br>" + ress + "<br>"
     } else if(word == 'var'){
       i++
       variables[`${words[i]}`] = getString();
