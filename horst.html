@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<head>
+    <title>HorstMini</title>
+    <link rel="shortcut icon" type="image/png" href="./images/hminilogo.png">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <h1 class="title">HorstMini</h1> <img src="./images/hminilogo.png" style="width:150px;height:150px" class="centerimg">
+    <h2 class="subtitle">(Made by Friedrich)</h4>
+    <div style="width:800px; margin:0 auto;">
+        <h3 class="text">Befehl: <input id="horstIn">
+        <button onclick="runHorst()">
+            Ausführen
+        </button></h3>
+    </div>
+</body>
+<script>
+    function runHorst(){
+    var text = document.getElementById("horstIn").value;
+var variables = {};
+const keywords = ['schreib', 'var']
+
+variables["pi"] = Math.PI;
+variables["e"] = Math.E;
+ var i;
+var words;
+var interpret = function(text){
+  words = text.split(' ');
+  for(i = 0; i < words.length; i++){
+    var word = words[i];
+
+    if(word == 'schreib'){
+      document.write(getString());
+    } else if(word == 'var'){
+      i++
+      variables[`${words[i]}`] = getString();
+    } 
+  }
+}
+var getString = function(){
+  i++
+  var string = "";
+  while(i < words.length){
+    if(words[i] == 'schreib'){
+      i--;
+      return string;
+    } 
+    if(words[i] == 'calc'){
+      string += calc();
+      i--;
+      return string;
+    } else{
+      string += (variables[`${words[i]}`] || words[i]) + ' ';
+    }
+    i++
+  }
+  return string;
+}
+
+function getStringQuiet(i, words){
+  i++
+  var string = "";
+  while(i < words.length){
+    if(keywords.includes(words[i])){
+      i--;
+      return string;
+    } 
+    if(words[i] == 'calc'){
+      string += calcQuiet(i, words) + ' ';
+    } else{
+      string += (variables[`${words[i]}`] || words[i]) + ' ';
+    }
+    i++
+  }
+  return string;
+}
+
+function calcQuiet(i, words){
+  i++
+  var number = "";
+  while(i < words.length){
+    if(keywords.includes(words[i])){
+      return eval(number) || '';
+    } else if(words[i] == 'calc'){ 
+      number+= calcQuuet(i, words);
+    }
+    number += (variables[`${words[i]}`] || words[i]) || '';
+    //console.log(variables[`${words[i]}`] || words[i])
+    i++
+  }
+  //console.log(number)
+  return eval(number);
+}
+
+function calc(){
+  i++
+  var number = "";
+  while(i < words.length){
+    if(keywords.includes(words[i])){
+      return eval(number) || '';
+    } else if(words[i] == 'calc'){ 
+      number+= calc();
+    }
+    //console.log(words[i])
+    number += (variables[`${words[i]}`] || words[i]) || '';
+    //console.log(variables[`${words[i]}`] || words[i])
+    i++
+  }
+  //console.log(number)
+  return eval(number);
+}
+interpret(text);
+}
+</script>

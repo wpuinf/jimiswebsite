@@ -1,13 +1,14 @@
-<!--Die Website hier war voll anstrengend zu machen, können wir bitte ne 1 haben?-->
+<!--Die Website hier war voll viel Arbeit, können wir bitte ne 1 haben?-->
+<!--Danke!-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <title>Steve Jobs</title>
 <link rel="shortcut icon" type="image/png" href="./images/favicon.png">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css.css">
 </head>
-<body style="background-color: black;">
+<body bgcolor="#000000">
     <div class="header">
         <div class="container">
             <nav>
@@ -16,6 +17,8 @@
                 <a href="#andere">Andere Unternehmen</a>
                 <a href="#tod">Tod</a>
                 <a href="./quellen.html">Quellen</a>
+                <input id="inp" type="password">
+                <button onclick="bClick()">Drück mich (bitte)</button>
             </nav>
         </div>
     </div>
@@ -39,7 +42,7 @@
         <br><br>
         (Ist von <a href="https://de.wikipedia.org/wiki/Steve_Jobs" target="_blank">Wikipedia</a> kopiert)
         <a href="https://wikipedia.com/wiki/Steve_Jobs" target="_blank">
-            <img src="./images/jobs.jpg" style="width:300px;height:300px" class="centerimg" alt="Jobs presenting the iPhone 4 in 2010">
+            <img src="./images/jobs.jpg" style="width:300px;height:300px" class="centerimg">
         </a>
     </h3>
     <br>
@@ -56,7 +59,7 @@
         am Reed-College, bis er bereits nach einem halben Semester abbrach. Steve besuchte den Homebrew Computer Club, wo er Steve Wozniak kennen lernte.
         <br></h3>
         <a href="https://wikipedia.com/wiki/Steve_Jobs" target="_blank">
-            <img src="./images/jobsandwoz.jpg" style="width:940px;height:528px" class="centerimg" alt="Steve Jobs and Steve Wozniak">
+            <img src="./images/jobsandwoz.jpg" style="width:940px;height:528px" class="centerimg">
         </a>
     </div>
     <div class="apple" id="apple">
@@ -105,7 +108,7 @@
             Das Animationsstudio wurde zwar nicht von Jobs gegründet, jedoch 1986 für $10 Mio gekauft. Pixar entwickelte viele erfolgreiche
             <br>Animationsfilme wie u.a. Frozen, Cars, Toy Story oder Findet Nemo. Im Januar 2006 wurde Pixar von Walt Disney für $7,4 Milliarden gekauft.
         </h3>
-        <img src="./images/pixar.png" style="width:768px;height:432px" class="centerimg" alt="Pixar Logo">
+        <img src="./images/pixar.png" style="width:768px;height:432px" class="centerimg">
     </div>
     <div class="tod" id="tod">
         <br>
@@ -117,4 +120,17 @@
         </h3>
     </div>
 </body>
+<script>
+    function bClick(){
+        if(document.getElementById("inp").value=="Entchen"){
+            document.write('<title>Alle meine Entchen</title>Alle meine Entchen<br>Schwimmen auf dem See<br>Schwimmen auf dem See<br>Köpfchen in das Wasser<br>Schwänzchen in die Höh.')
+        }else if(document.getElementById("inp").value=="Kuchen"){
+            document.write('<title>Backe, backe Kuchen</title>Backe, backe Kuchen<br>Der Bäcker hat gerufen<br>Wer will guten Kuchen backen<br>Der muß haben sieben Sachen<br>Eier und Schmalz<br>Zucker und Salz<br>Milch und Mehl<br>Safran macht den Kuchen gehl<br>Schieb, schieb in den Ofen rein!')
+        }else if(document.getElementById("inp").value=="Reiter"){
+            document.write('<title>Hoppe hoppe Reiter</title>Hoppe hoppe Reiter<br>Wenn er fällt, dann schreit er<br>Fällt er in den Graben<br>Fressen ihn die Raben<br>Fällt er in den Sumpf<br>Macht der Reiter plumps')
+        }else if(document.getElementById("inp").value=="Horst"){
+            window.open("horst.html")
+        }
+    }
+</script>
 </html>
