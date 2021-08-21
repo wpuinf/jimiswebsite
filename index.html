@@ -1,5 +1,5 @@
-<!--Die Website hier war voll viel Arbeit, können wir bitte ne 1 haben?-->
-<!--Danke!-->
+<!--Diese Website ist sehr schön.-->
+<!--(Hoffe ich)-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +32,7 @@
         <br>Als Mitgründer und langjähriger CEO von Apple Inc. gilt er als eine der bekanntesten Persönlichkeiten der Computerindustrie. 
         <br>Zusammen mit Steve Wozniak und Ron Wayne gründete 
         er 1976 Apple und half, sowohl das Konzept des Heimcomputers als auch später die Generation der Smartphones sowie Tabletcomputer populär zu machen. 
-        <br>Zudem war er mit dem Macintosh 
+        <br>Zudem war er mit dem Macintosh
         ab 1984 maßgeblich an der Einführung von Personal Computern mit grafischer Benutzeroberfläche beteiligt und entwickelte mit dem iTunes Store und dem Medienabspielgerät iPod in 
         den frühen 2000er Jahren wichtige Meilensteine für den Markterfolg digitaler Musikdownloads.
         <br>Jobs war darüber hinaus Geschäftsführer und Hauptaktionär der Pixar Animation Studios 
@@ -66,6 +66,7 @@
         <br>
         <h1 class="title">Apple</h1>
         <h3 class="text">Apple Computers wurde 1976 von Jobs, Wozniak und Ron Wayne, einem freund der beiden gegründet.</h3>
+        <!--Haha das hier ist Zeile 69-->
         <h2 class="subtitle">Apple I</h2>
             <h3 class="text">Für Apples erstes Produkt, den "Apple I" musste Steve Jobs seinen VW-Bus für $1500 verkaufen.
             <!--Da fällt mir ein Witz ein: Was ist die Gemeinsamkeit zwischen Jesus und einem VW-Bus? Sind beides Märtyrer. (Mehrtürer) *hahaha*-->
@@ -122,14 +123,18 @@
 </body>
 <script>
     function bClick(){
-        if(document.getElementById("inp").value=="Entchen"){
+        var val = document.getElementById("inp").value
+        if(val=="Entchen"){
             document.write('<title>Alle meine Entchen</title>Alle meine Entchen<br>Schwimmen auf dem See<br>Schwimmen auf dem See<br>Köpfchen in das Wasser<br>Schwänzchen in die Höh.')
-        }else if(document.getElementById("inp").value=="Kuchen"){
+        }else if(val=="Kuchen"){
             document.write('<title>Backe, backe Kuchen</title>Backe, backe Kuchen<br>Der Bäcker hat gerufen<br>Wer will guten Kuchen backen<br>Der muß haben sieben Sachen<br>Eier und Schmalz<br>Zucker und Salz<br>Milch und Mehl<br>Safran macht den Kuchen gehl<br>Schieb, schieb in den Ofen rein!')
-        }else if(document.getElementById("inp").value=="Reiter"){
+        }else if(val=="Reiter"){
             document.write('<title>Hoppe hoppe Reiter</title>Hoppe hoppe Reiter<br>Wenn er fällt, dann schreit er<br>Fällt er in den Graben<br>Fressen ihn die Raben<br>Fällt er in den Sumpf<br>Macht der Reiter plumps')
-        }else if(document.getElementById("inp").value=="Horst"){
+        }else if(val=="Horst"){
             window.open("horst.html")
+        }else if(val.startsWith("wiki")==true){
+            const arr = val.split(":")
+            window.open("https://wikipedia.com/wiki/" + arr[1])
         }
     }
 </script>
