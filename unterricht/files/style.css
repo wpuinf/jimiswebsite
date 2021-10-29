@@ -1,0 +1,70 @@
+/* Farben */
+/* ---------------------------------------*/
+.green {
+ background-color:#003011;
+ color:#ffee00;
+}
+
+.orange {
+ background-color:#ddaa00;
+ color:#000000;
+}
+
+.blue {
+ background-color:#aaaaff;
+ color:#000000;
+}
+
+
+/* Textattribute */
+/* ---------------------------------------*/
+.center {
+  text-align:center;
+}
+
+.bigger {
+  font-size:1.2em;
+  font-weight:lighter;
+}
+
+.wide {
+  letter-spacing: 0.3em;
+}
+
+
+.quelltext {
+  font-family:monospace; 
+}
+
+
+/* Tag-Ergaenzungen */
+/* ---------------------------------------*/
+p, li {
+  font-family:sans-serif;
+  line-height: 130%;
+  margin-top: 0;
+  margin-bottom: 0.6em;
+}
+
+p {
+  text-align:justify;
+}
+
+h2 {
+  margin-top: 1.0em;
+  margin-bottom: 0.6em;
+}
+
+table {
+  margin-top: 10;
+  margin-bottom:10;
+}
+
+a:link, a:visited, a:active {
+  color:#ffee00;
+}
+
+a:hover {
+  color:#ffee00;
+  text-decoration:none;
+}

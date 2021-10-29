@@ -1,4 +1,3 @@
-//konamiListener Quelle: https://stackoverflow.com/a/45576888
 function onKonamiCode(cb) {
     var input = '';
     var key = '38384040373937396665';
@@ -11,4 +10,4 @@ function onKonamiCode(cb) {
     input = ("" + e.keyCode);
     });
     }
-    onKonamiCode(function () {window.open("./assets/nevergonna.mp4")})
+    onKonamiCode(function () {window.open("./assets/images/nevergonna.mp4")})

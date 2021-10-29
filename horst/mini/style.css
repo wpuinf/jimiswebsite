@@ -2,14 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Teko:wght@500&display=swap');
-.header {
-    width: 100%;
-    position: fixed;        
-    background: #383434;
-    padding: 10px 0;
-    color: #fff;
-    top: 0;
-}
+
 .intro {
     background-color: #264653;
     line-height: 50%;
@@ -32,16 +25,6 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
     
-}
-nav a{
-    font-family: "Ubuntu", sans-serif;
-    color: #fff;
-    text-decoration: none;
-    padding: 7px 25px;
-    display: inline-block;
-}
-nav a:hover{
-    color: rgb(114, 114, 114);
 }
 html {
 scroll-behavior: smooth;

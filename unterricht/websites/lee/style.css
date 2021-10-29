@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=McLaren&family=Quicksand:wght@500&family=Rampart+One&family=Urbanist:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,400');
+
+/* @media(min-width: 1189px){
+    .fact_header{
+        font-size: 50px;
+        font-family: 'Raleway';
+        vertical-align: auto;
+        color: whitesmoke;
+    }
+
+    .card{
+        width: 31%;
+        background-color: rgba(37, 34, 37, 0.3);
+        margin: 0px 0.5% 0% 1%;
+        height: 70px;
+        box-shadow: 0 0 5px 0;
+        text-align: center;
+        overflow: hidden;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: inline-block;
+        transition: 0.7s;
+        vertical-align: top; 
+    }
+}
+
+@media(min-width: 1000px){
+    .fact_header{
+        font-size: 45px;
+        font-family: 'Raleway';
+        vertical-align: auto;
+        color: whitesmoke;
+    }
+
+    .card{
+        width: 31%;
+        background-color: rgba(37, 34, 37, 0.3);
+        margin: 0px 0.5% 0% 1%;
+        height: 80px;
+        box-shadow: 0 0 5px 0;
+        text-align: center;
+        overflow: hidden;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: inline-block;
+        transition: 0.7s;
+        vertical-align: top; 
+    }
+}
+
+
+@media(min-width: 500px){
+    .fact_header{
+        font-size: 35px;
+        font-family: 'Raleway';
+        vertical-align: auto;
+        color: whitesmoke;
+    }
+} */
+
+.menu{
+    background-color: #1b1b1b;
+    height: 100px;
+    width: 100%;
+    margin: auto;
+    margin-top: -40px;
+}
+
+body{
+    margin: 0;
+    background-color: #1b1b1b;
+}
+
+
+.button{
+    width: 290px;
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    background-color: rgba(37, 34, 37, 0.3);
+    box-shadow: 0 0 5px 0;
+    margin: 17px 3px 0% 3px;
+    height: 63px;
+    box-shadow: 0 0 5px 0;
+    text-align: center;
+    float: left;
+    vertical-align: middle;
+}
+
+.container{
+    width: 592px;
+    height: 63px;
+    margin: 0 auto;
+}
+
+.photo{
+    width: 100%;
+    margin-bottom: -40px;
+    /* margin-top: -64px; */
+}
+
+.t{
+    font-family: 'McLaren';
+    font-size:  2.2rem;
+    vertical-align: auto;
+    color: whitesmoke;
+}
+
+.facts{
+    margin-top: -65px;
+    background-color: rgba(27, 27, 27, 0.7);
+    width: 100%;
+    height: 200px;
+    position: absolute;
+}
+
+/* .card{
+    width: 31%;
+    background-color: rgba(37, 34, 37, 0.3);
+    margin: 0px 0.5% 0% 1%;
+    height: 70px;
+    box-shadow: 0 0 5px 0;
+    text-align: center;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    transition: 0.7s;
+    vertical-align: top; 
+} */
+
+.card{
+    width: 78%;
+    background-color: rgba(37, 34, 37, 0.3);
+    margin: 7px 11% 0% 11%;
+    height: 63px;
+    box-shadow: 0 0 5px 0;
+    text-align: center;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.7s;
+    vertical-align: top;
+}
+
+
+.card:hover{
+    height: 300px;
+    transition: 0.7s; 
+}
+
+/* .card1{
+    
+    
+} */
+.fact_header{
+    font-size: 35px;
+    font-family: 'Raleway';
+    vertical-align: auto;
+    color: whitesmoke;
+    vertical-align: middle;
+}
+
+.justify{
+    justify-content: space-around;
+    display: flex;
+}
+
+.fact_content{
+    color: white;
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family: 'Urbanist';
+    text-align: center;
+}
+
+.content{
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.biographie{
+    margin-top: 570px;
+    margin-left: 140px;
+    margin-right: 140px;
+}
+
+.biog_text{
+    color: white;
+    font-family: 'Urbanist';
+    font-size: 18px;
+}
+
+.header2{
+    text-align: center;
+    font-family: 'Quicksand';
+    color: wheat;
+    font-size: 30px;
+}
+
+.tim-lee{
+    text-align: center;
+    font-family: 'Quicksand';
+    color: wheat;
+    /* margin-left: 43%;
+    margin-right: 43%; */
+    margin-top: 10px;
+    font-size: 3rem;
+}
+
+.header1{
+    margin: auto;
+    width: auto;
+}
+
+.general_facts_header{
+    margin-top: 115px;
+}
+
+footer{
+    margin-left: 160px;
+    margin-right: 160px;
+}
+
+.links{
+    font-family: 'McLaren';
+    color: white;
+}
+
+.cc-text{
+    color: white;
+}
+
+/* .cc_link{
+    height: 50px;
+} */
+
+.list{
+    color: white;
+}
+
+.info{
+    color: whitesmoke;
+}
+
+.list-links{
+    color: #1b1b1b
+}
