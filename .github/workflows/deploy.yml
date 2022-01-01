@@ -8,8 +8,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
-      - uses: w9jds/firebase-action@main
+      - uses: actions/checkout@master
+      - uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
         env:
