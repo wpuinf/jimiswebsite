@@ -1,6 +1,6 @@
 name: Firebase Continuous Deployment
 
-on: 
+on:
   push:
     branches: [ main ]
 
