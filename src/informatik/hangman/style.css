@@ -1,0 +1,14 @@
+#word {
+    letter-spacing: 10px;
+    padding-bottom: 100px;
+}
+
+body {
+    text-align: center;
+}
+button {
+    margin-top: 20px;
+}
+#errors {
+    color: red;
+}
