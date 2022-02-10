@@ -12,3 +12,6 @@ button {
 #errors {
     color: red;
 }
+#showWord {
+    display: none;
+}
