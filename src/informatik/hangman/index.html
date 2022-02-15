@@ -8,9 +8,25 @@
     <body onload="init()">
         <h1 id="word"></h1>
         Rate etwas: <input type="text" id="guessIn">
-        <br><button onclick="guess()">Raten!</button>
+        <br><button onclick="guess(document.getElementById('guessIn').value.toLowerCase())">Raten!</button>
         <div id="errors"></div>
         <div id="wrongGuesses"></div>
+        <div id="keyboard">
+            <button onclick="guess('q')">q</button>
+            <button onclick="guess('w')">w</button>
+            <button onclick="guess('e')">e</button>
+            <button onclick="guess('r')">r</button>
+            <button onclick="guess('t')">t</button>
+            <button onclick="guess('z')">z</button>
+            <button onclick="guess('u')">u</button>
+            <button onclick="guess('i')">i</button>
+            <button onclick="guess('o')">o</button>
+            <button onclick="guess('p')">p</button>
+            <button onclick="guess('ü')">ü</button>
+            <br>
+            <button onclick="guess('a')">a</button>
+            <button onclick="guess('q')">q</button>
+        </div>
         <div id="currentHangman">
             <img src="hangmen/0.png">
         </div>

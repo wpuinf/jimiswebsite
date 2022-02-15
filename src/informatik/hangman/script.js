@@ -15,8 +15,7 @@ function init() {
     });
 }
 
-function guess() {
-    const guess = document.getElementById('guessIn').value.toLowerCase();
+function guess(guess) {
     let wrongGuesses = JSON.parse(localStorage.getItem('wrongGuesses'));
     let word = localStorage.getItem('word');
     let uscores = document.getElementById('word').innerHTML;
