@@ -15,3 +15,9 @@ button {
 #showWord {
     display: none;
 }
+#keyboard p {
+    margin-bottom: -30px
+}
+#keyboard {
+    margin-bottom: 40px;
+}
