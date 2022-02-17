@@ -21,3 +21,17 @@ button {
 #keyboard {
     margin-bottom: 40px;
 }
+#stats {
+    border: 3px solid black;
+    padding: 10px;
+    width: 15%;
+    margin: auto;
+}
+#stats h1 {
+    margin-bottom: 0px;
+    margin-top: -5px;
+}
+#stats p {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
