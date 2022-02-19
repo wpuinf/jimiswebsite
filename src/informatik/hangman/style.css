@@ -35,3 +35,32 @@ button {
     margin-bottom: 0px;
     margin-top: 0px;
 }
+#login {
+    background: white;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+#login p {
+    font-size: 50px;
+}
+#login input {
+    margin-top: 10px;
+    font-size: 30px;
+    border-radius: 10px;
+    outline: none;
+}
+#login button {
+    margin-top: 10px;
+    font-size: 30px;
+    border-radius: 10px;
+    outline: none;
+}
+#loginErrors {
+    color: red;
+    font-size: 30px;
+    margin-top: 20px;
+}

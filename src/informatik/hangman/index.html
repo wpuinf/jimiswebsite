@@ -6,6 +6,13 @@
         <meta charset="utf-8">
     </head>
     <body onload="init()">
+        <div id="login">
+            <p>Wie heißt du?</p>
+            <input type="text" id="name">
+            <button onclick="selectName()">Fertig</button>
+            <div id="loginErrors"></div>
+        </div>
+        <button onclick="window.open(`./leaderboard.html?name=${localStorage.getItem('name')}`, '_self')">Bestenliste</button>
         <h1 id="word"></h1>
         Rate etwas: <input type="text" id="guessIn">
         <br><button onclick="guess(document.getElementById('guessIn').value.toLowerCase())">Raten!</button>

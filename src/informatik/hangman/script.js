@@ -1,4 +1,8 @@
 function init() {
+    let name = localStorage.getItem('name');
+    if (name) {
+        document.getElementById('login').style.display = "none";
+    }
     fetch('https://horstcors.herokuapp.com/https://alex-riedel.de/randV2.php?anz=1', {
         method: 'GET'
     }).then(async request => {
@@ -61,6 +65,7 @@ function guess(guess) {
             stats.wins++;
             localStorage.setItem('stats', JSON.stringify(stats));
             updateStats();
+            registerGame();
         }
     } else {
         document.getElementById('errors').innerHTML = "Buchstabe nicht vorhanden!";
@@ -76,12 +81,52 @@ function guess(guess) {
             stats.losses++;
             localStorage.setItem('stats', JSON.stringify(stats));
             updateStats();
+            registerGame();
         };
         clearGuess();
     }
 
     document.getElementById('currentHangman').innerHTML = `<img src="./hangmen/${wrongGuesses.length}.png" alt="Hangman">`;
 };
+
+async function selectName() {
+    let name = document.getElementById('name').value;
+    if (name) {
+        const request = await fetch('https://jimishangmanapi.herokuapp.com/register', {
+            method: 'GET',
+            headers: {
+                'Authorization': name
+            }
+        });
+        if (request.status == 200) {
+
+            localStorage.setItem('name', name);
+            document.getElementById('login').style.display = "none";
+        } else {
+            document.getElementById('loginErrors').innerHTML = "Name ist bereits vergeben!";
+        }
+    } else {
+        document.getElementById('loginErrors').innerHTML = "Bitte Namen eingeben!";
+    }
+}
+
+function registerGame() {
+    let name = localStorage.getItem('name');
+    let stats = localStorage.getItem('stats');
+    fetch('https://jimishangmanapi.herokuapp.com/game', {
+        method: 'POST',
+        headers: {
+            'Authorization': name
+        },
+        body: stats
+    }).then(request => {
+        if (request.status == 200) {
+            console.log("Game registered!");
+        } else {
+            document.getElementById('errors').innerHTML = "Fehler beim Registrieren des Spiels!";
+        }
+    });
+}
 
 function clearGuess() {
     document.getElementById('guessIn').value = "";
@@ -99,4 +144,35 @@ function toUtf8(string) {
 function updateStats() {
     let stats = JSON.parse(localStorage.getItem('stats'));
         document.getElementById('stats').innerHTML = `<h1>Statistiken:</h1><p>Gespielte Spiele: ${stats.games}</p><p>Gewonnene Spiele: ${stats.wins}</p><p>Verlorene Spiele: ${stats.losses}</p><p>Streak: ${stats.streak}</p>`;
+}
+
+function initLB() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name');
+    fetch('https://jimishangmanapi.herokuapp.com/players', {
+        method: 'GET'
+    }).then(async request => {
+        const response = await request.json();
+        let keys = Object.keys(response);
+        for (let i = 0; i < keys.length; i++) {
+            let player = response[keys[i]];
+            if (!player.streak) {
+                player.streak = 0;
+            }
+            if (!player.games) {
+                player.games = 0;
+            }
+            if (!player.wins) {
+                player.wins = 0;
+            }
+            if (!player.losses) {
+                player.losses = 0;
+            }
+            if (keys[i] == name) {
+                document.getElementById('lb').innerHTML += `<tr><td><a>${keys[i]}</a></td><td>${player.streak}</td><td>${player.games}</td><td>${player.wins}</td><td>${player.losses}</td></tr>`;
+            } else {
+                document.getElementById('lb').innerHTML += `<tr><td>${keys[i]}</td><td>${player.streak}</td><td>${player.games}</td><td>${player.wins}</td><td>${player.losses}</td></tr>`;
+            }
+        }
+    });
 }
