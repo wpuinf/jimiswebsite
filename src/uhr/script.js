@@ -54,3 +54,29 @@ function changeLanguage(language) {
     document.getElementsByName(language)[0].className = 'selected';
     document.getElementsByName(opposite)[0].className = '';
 }
+
+function openFullscreen() {
+    let elem = document.documentElement;
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+      elem.msRequestFullscreen();
+    }
+
+    document.getElementById('fullscreen').innerHTML = '<a onclick="closeFullscreen()"><img src="./fullscreen/true.svg"></a>';
+}
+
+function closeFullscreen() {
+    let elem = document.documentElement;
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Safari */
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE11 */
+      document.msExitFullscreen();
+    }
+
+    document.getElementById('fullscreen').innerHTML = '<a onclick="openFullscreen()"><img src="./fullscreen/false.svg"></a>';
+  }

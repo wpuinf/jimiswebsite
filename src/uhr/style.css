@@ -37,3 +37,8 @@ body {
     margin-top: 20px;
     overflow-wrap: break-word;
 }
+#fullscreen {
+    width: 60px;
+    margin-top: 10px;
+    cursor: pointer;
+}
