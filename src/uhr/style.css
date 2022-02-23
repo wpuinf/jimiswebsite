@@ -35,4 +35,5 @@ body {
     text-align: center;
     padding: 10px;
     margin-top: 20px;
+    overflow-wrap: break-word;
 }
