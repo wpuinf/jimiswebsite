@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, monospace;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 30%;
+}
+
+li {
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+li a {
+    text-decoration: none;
+    font-size: 5rem;
+}
+
+p {
+    visibility: hidden;
+    color: white;
+    padding: 5px;
+    margin-top: 0;
+    background-color: #303030;
+    border-radius: 5px;
+}
+
+li:hover p {
+    visibility: visible;
+} 
