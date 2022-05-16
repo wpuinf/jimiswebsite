@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schließfächer</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/schließfaecher.css">
+    <script defer src="js/lockers.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="schliessfeacher.html" class="active">Schließfächer</a></li>
+            <li><a href="anfragen.html">Anfragen</a></li>
+            <li><a href="einstellungen.html">Einstellungen</a></li>
+        </ul>
+    </nav>
+
+    <div class="above-content">
+        <ul id="view-selection">
+            <li><a href="#" id="selection-table" onclick="setViewTable();">Tabelle</a></li>
+            <li><a href="#" id="selection-list" onclick="setViewList();">Liste</a></li>
+        </ul>
+
+        <ul class="table-view" id="legend">
+            <li><span class="free" >Frei</span></li>
+            <li><span class="occupied">Belegt</span></li>
+            <li><span class="expired-soon">Noch 3 Monate</span></li>
+            <li><span class="expired">Abgelaufen</span></li>
+            <li><span class="broken">Defekt</span></li>
+        </ul>
+
+        <div class="autocomplete">
+            <input type="text" id="search-input" placeholder="Schließfach suchen...">
+            <div class="search-results">
+                <a>Ergebnis 1</a>
+                <a>Ergebnis 2</a>
+                <a>Ergebnis 3</a>
+                <a>Ergebnis 4</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="table-view" id="table">
+            <ol>
+                <li style="display: none"><span class="locker-item free" >123</span></li>
+            </ol>
+        </div>
+        <div class="list-view list" >
+            <div class="row header">
+                <div class="col">Nummer</div>
+                <div class="col">Name</div>
+                <div class="col">Status</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+ul.requests {
+    width: 50%;
+}
+
+ul.requests li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+ul.requests li * {
+    margin: 16px;
+}
+
+ul.requests li:hover {
+    background-color: #c5c5c5;
+}

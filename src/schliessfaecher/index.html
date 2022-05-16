@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--Script/Stylesheet documents-->
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./schul-css.css">
+        <script type="text/javascript" src="./script.js" defer></script>
+    </head>
+    <body>
+
+        <h1 class="dunkel">Schließfachvertrag:</h1>
+        <a href="./schliessfachvertrag22.pdf" target="_blank" class="contract">Hier klicken um Vertrag zu Lesen</a>
+        <img src="./logo_transparent.png" style="float: right;">
+        <form class="hell">
+            <p>* = Pflichtfeld</p>
+            <h1>Mieter:</h1>
+            <label for="renterSurname"><requiredField>*</requiredField>Name des <b>Mieters</b>: </label><input type="text" id="renterSurname" placeholder="Mustermann" required><br>
+            <label for="renterFirstName"><requiredField>*</requiredField>Vorname des <b>Mieters</b>: </label><input type="text" id="renterFirstName" placeholder="Erika" required><br>
+            <label for="renterTelephone"><requiredField>*</requiredField>Telefon privat: </label><input type="text" id="renterTelephone" placeholder="+49 123 456789" required><br>
+            <label for="renterEmail"><requiredField>*</requiredField>E-Mail: </label><input type="text" id="renterEmail" placeholder="erika@mustermann.de" required>
+            <h1>Nutzer:</h1>
+            <label for="userSurname"><requiredField>*</requiredField>Name des <b>Nutzers</b>: </label><input type="text" id="userSurname" placeholder="Mustermann" required><br>
+            <label for="userFirstName"><requiredField>*</requiredField>Vorname des <b>Nutzers</b>: </label><input type="text" id="userFirstName" placeholder="Max" required><br>
+            <label for="userTelephone"><requiredField>*</requiredField>Telefon: </label><input type="text" id="userTelephone" placeholder="+49 123 456789" required><br>
+            <label for="userEmail"><requiredField>*</requiredField>E-mail: </label><input type="text" id="userEmail" placeholder="max@mustermann.de" required><br>
+            <label for="userHeight"><requiredField>*</requiredField>Derzeitige Körpergröße des <b>Nutzers</b> in cm: </label><input type="number" id="userHeight" min="100" max="200" value="160" required><br>
+            <br><br>
+            <label for="beginYear"><requiredField>*</requiredField>Jahr des Beginns der Anmietung: </label><input type="number" min="2018" max="2030" value="2022" id="beginYear" required><br>
+            <label for="beginClass"><requiredField>*</requiredField>Klasse bei Beginn der Anmietung: </label><input type="text" id="beginClass" required><br>
+            <br>
+            <label for="size" id="sizeLabel"><requiredField>*</requiredField>Gewünschte Fachgröße:</label>
+            <input type="radio" name="size" id="sizeA" value="a" required><label for="sizeA">A</label>
+            <input type="radio" name="size" id="sizeB" value="b" required><label for="sizeB">B</label>
+            <br><b>Sollte ein Fach der Größe B nicht zur Verfügung stehen, wird automatisch ein Fach der Größe A zugewiesen.</b></p>
+            <h1>SEPA-Lastschriftmandat</h1>
+            <p>Hiermit ermächtige ich den „Förderverein des Käthe-Kollwitz-Gymnasiums Berlin Prenzlauer Berg e.V.“ die Beträge für ein Schließfach der Schule jährlich, sowie beim Erstvertrag zzgl. eine Kaution in Höhe von 15,00 € von meinem unten stehenden Konto mittels Lastschrift einzuziehen.<br>Zugleich weise ich mein Kreditinstitut an, die vom Förderverein des Käthe Kollwitz Gymnasium e.V. auf mein Konto gezogenen Lastschriften einzulösen.<br>Wenn mein Konto die erforderliche Deckung nicht aufweist, besteht seitens des kontoführenden Instituts keine Verpflichtung zur Einlösung.</p>
+            
+            <label for="child"><requiredField>*</requiredField>für das Kind: </label><input type="text" id="child" placeholder="Max Mustermann"required><br>
+            <label for="owner"><requiredField>*</requiredField>Kontoinhaber (Vor- und Nachname): </label><input type="text" id="owner" placeholder="Erika Mustermann" required><br>
+            <label for="bank"><requiredField>*</requiredField>Name des Kreditinstituts: </label><input type="text" id="bank" placeholder="Musterbank AG" required><br>
+            <label for="iban"><requiredField>*</requiredField>IBAN-Nr.: </label><input type="text" id="iban" placeholder="DE1234567890123456789012" required><br>
+            <label for="bic"><requiredField>*</requiredField>BIC: </label><input type="text" id="bic" placeholder="ABCDDE12" required><br>
+            <label for="applys"><requiredField>*</requiredField>Dieses Mandat gilt ab: </label><input type="date" id="applys" required><br>
+            <form class="checks">
+                <input type="checkbox" name="readContract" id="readContract"><label for="readContract">Ich habe <a href="./schliessfachvertrag22.pdf">den Vertrag</a> gelesen</label>
+            </form>
+        </form>
+        <button onclick="submit()" class="hell">Einreichen</button>
+        <p class="small source dunkel">
+            <!--Friedrich Darius & Jimi Herken für "Käthes Schließfächer" | -->
+            <a href="./admin/schliessfeacher.html">Admin-Interface</a>
+        </p>
+    </body>
+</html>

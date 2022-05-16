@@ -1,0 +1,17 @@
+form {
+    padding: 10px;
+}
+form h1 {
+    font-size: 1.5em;
+    margin: 0;
+    margin-top: 1%;
+}
+
+.contract {
+    background-color: white;
+    font-size: 1.5em;
+}
+
+button {
+    font-size: 1.5em;
+}
