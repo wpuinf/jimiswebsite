@@ -1,0 +1,62 @@
+.letter:focus {
+    outline: none;
+}
+
+.letter-input {
+    margin-bottom: 10px;
+}
+
+.letter-input p {
+    display: inline;
+}
+
+.sepa-legal p {
+    width: 50%;
+    font-size: 0.8em;
+    margin-top: 0.1em;
+    color: #666;
+}
+
+input {
+    padding: 3px;
+    height: 20px;
+    width: 400px;
+    border: 1px solid black;
+}
+
+input:focus {
+    outline: none;
+}
+input[type=date] {
+    width: 200px;
+    font: inherit;
+    font-size: 0.8em;
+}
+input[type=number] {
+    width: 80px;
+    font: inherit;
+    font-size: 0.8em;
+}
+input[type=radio] {
+    margin-top: 0.5em;
+    width: 50px;
+}
+input[type=radio] + label {
+    font-size: 1em;
+    margin-top: 0.4em;
+}
+input[type=checkbox] {
+    margin-top: 0.5em;
+    margin-left: 0;
+    width: 15px;
+    height: 15px;
+}
+
+
+.letter {
+    padding: 3px !important;
+    width: 20px !important;
+    height: 20px !important;
+    border: 1px solid black !important;
+    text-align: center !important;
+}

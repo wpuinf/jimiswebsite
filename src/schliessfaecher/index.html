@@ -2,54 +2,205 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <!--Script/Stylesheet documents-->
-        <link rel="stylesheet" href="./style.css">
-        <link rel="stylesheet" href="./schul-css.css">
-        <script type="text/javascript" src="./script.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="boxes.css">
+        <script src="script.js" defer></script>
+        <script src="boxes.js" defer></script>
+        <title>Schließfachvertrag</title>
     </head>
     <body>
-
-        <h1 class="dunkel">Schließfachvertrag:</h1>
-        <a href="./schliessfachvertrag22.pdf" target="_blank" class="contract">Hier klicken um Vertrag zu Lesen</a>
-        <img src="./logo_transparent.png" style="float: right;">
-        <form class="hell">
-            <p>* = Pflichtfeld</p>
-            <h1>Mieter:</h1>
-            <label for="renterSurname"><requiredField>*</requiredField>Name des <b>Mieters</b>: </label><input type="text" id="renterSurname" placeholder="Mustermann" required><br>
-            <label for="renterFirstName"><requiredField>*</requiredField>Vorname des <b>Mieters</b>: </label><input type="text" id="renterFirstName" placeholder="Erika" required><br>
-            <label for="renterTelephone"><requiredField>*</requiredField>Telefon privat: </label><input type="text" id="renterTelephone" placeholder="+49 123 456789" required><br>
-            <label for="renterEmail"><requiredField>*</requiredField>E-Mail: </label><input type="text" id="renterEmail" placeholder="erika@mustermann.de" required>
-            <h1>Nutzer:</h1>
-            <label for="userSurname"><requiredField>*</requiredField>Name des <b>Nutzers</b>: </label><input type="text" id="userSurname" placeholder="Mustermann" required><br>
-            <label for="userFirstName"><requiredField>*</requiredField>Vorname des <b>Nutzers</b>: </label><input type="text" id="userFirstName" placeholder="Max" required><br>
-            <label for="userTelephone"><requiredField>*</requiredField>Telefon: </label><input type="text" id="userTelephone" placeholder="+49 123 456789" required><br>
-            <label for="userEmail"><requiredField>*</requiredField>E-mail: </label><input type="text" id="userEmail" placeholder="max@mustermann.de" required><br>
-            <label for="userHeight"><requiredField>*</requiredField>Derzeitige Körpergröße des <b>Nutzers</b> in cm: </label><input type="number" id="userHeight" min="100" max="200" value="160" required><br>
-            <br><br>
-            <label for="beginYear"><requiredField>*</requiredField>Jahr des Beginns der Anmietung: </label><input type="number" min="2018" max="2030" value="2022" id="beginYear" required><br>
-            <label for="beginClass"><requiredField>*</requiredField>Klasse bei Beginn der Anmietung: </label><input type="text" id="beginClass" required><br>
-            <br>
-            <label for="size" id="sizeLabel"><requiredField>*</requiredField>Gewünschte Fachgröße:</label>
-            <input type="radio" name="size" id="sizeA" value="a" required><label for="sizeA">A</label>
-            <input type="radio" name="size" id="sizeB" value="b" required><label for="sizeB">B</label>
-            <br><b>Sollte ein Fach der Größe B nicht zur Verfügung stehen, wird automatisch ein Fach der Größe A zugewiesen.</b></p>
-            <h1>SEPA-Lastschriftmandat</h1>
-            <p>Hiermit ermächtige ich den „Förderverein des Käthe-Kollwitz-Gymnasiums Berlin Prenzlauer Berg e.V.“ die Beträge für ein Schließfach der Schule jährlich, sowie beim Erstvertrag zzgl. eine Kaution in Höhe von 15,00 € von meinem unten stehenden Konto mittels Lastschrift einzuziehen.<br>Zugleich weise ich mein Kreditinstitut an, die vom Förderverein des Käthe Kollwitz Gymnasium e.V. auf mein Konto gezogenen Lastschriften einzulösen.<br>Wenn mein Konto die erforderliche Deckung nicht aufweist, besteht seitens des kontoführenden Instituts keine Verpflichtung zur Einlösung.</p>
-            
-            <label for="child"><requiredField>*</requiredField>für das Kind: </label><input type="text" id="child" placeholder="Max Mustermann"required><br>
-            <label for="owner"><requiredField>*</requiredField>Kontoinhaber (Vor- und Nachname): </label><input type="text" id="owner" placeholder="Erika Mustermann" required><br>
-            <label for="bank"><requiredField>*</requiredField>Name des Kreditinstituts: </label><input type="text" id="bank" placeholder="Musterbank AG" required><br>
-            <label for="iban"><requiredField>*</requiredField>IBAN-Nr.: </label><input type="text" id="iban" placeholder="DE1234567890123456789012" required><br>
-            <label for="bic"><requiredField>*</requiredField>BIC: </label><input type="text" id="bic" placeholder="ABCDDE12" required><br>
-            <label for="applys"><requiredField>*</requiredField>Dieses Mandat gilt ab: </label><input type="date" id="applys" required><br>
-            <form class="checks">
-                <input type="checkbox" name="readContract" id="readContract"><label for="readContract">Ich habe <a href="./schliessfachvertrag22.pdf">den Vertrag</a> gelesen</label>
-            </form>
-        </form>
-        <button onclick="submit()" class="hell">Einreichen</button>
-        <p class="small source dunkel">
-            <!--Friedrich Darius & Jimi Herken für "Käthes Schließfächer" | -->
-            <a href="./admin/schliessfeacher.html">Admin-Interface</a>
+        <div id="contract">
+            <h1>Schließfachneuvertrag <a id="showContract" onclick="changeContractVisibility()">▼ <span>Vertrag anzeigen</span></a></h1>
+            <div id="contractText">
+                <h2>1.Mietobjekt</h2>
+                <p>Der Mieter erhält für sein Kind bzw. für sich selbst zur alleinigen Verfügung vom Förderverein des Käthe-Kollwitz-Gymnasiums,
+                    im Folgenden als KKG bezeichnet, als Vermieter (vertreten durch die Schülerfirma „Käthes Schließfächer“) ein
+                    Stahlschließfach folgender Größe
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Höhe</th>
+                            <th>Breite</th>
+                            <th>Tiefe</th>
+                        </tr>
+                        <tr>
+                            <th>A (klein)</th>
+                            <td>345</td>
+                            <td>360</td>
+                            <td>460</td>
+                        </tr>
+                        <tr>
+                            <th>B (groß)</th>
+                            <td>580</td>
+                            <td>360</td>
+                            <td>460</td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    Der Mieter bestimmt den Nutzer des Schließfaches, der Schüler bzw. Schülerin des KKG sein muss. Der Schlüssel wird nach
+                    Zuweisung eines freien Faches auf der Basis eines vollständig ausgefüllten Vertrages übergeben. Ersatzschlüssel werden
+                    ausschließlich durch die Schülerfirma gegen eine Zahlung von 15 € zur Verfügung gestellt. Sämtliche Schlüssel sind am Ende
+                    der Mietzeit zurück zu geben. Sollte es sich um ein Fach mit Zahlenkombinationsschloss handeln, werden im Falle einer neuen
+                    Kombination, z.B. wegen Vergessens, 5 € fällig. Ein Fachtausch unter Mietern bzw. Nutzern ist nicht gestattet
+                </p>
+                <h2>2. Mietzeit</h2>
+                <p>
+                    Der Vertrag wird auf unbestimmte Zeit geschlossen, endet jedoch mit dem 30.06. des jeweiligen Jahres, in welchem der
+                    Schüler/in die Schule verlässt. Ein Mietjahr beginnt und endet mit dem jeweiligen Schuljahr. Der Mietvertrag kann mit einer Frist
+                    von 60 Tagen zum 30.06. eines jeden Jahres gekündigt werden. Auch am Ende der 12. Klasse oder beim vorzeitigen Verlassen
+                    der Schule ist eine Kündigung nötig. Die Kündigung erfordert die Schriftform. Die Kündigung wird wirksam, wenn der Schlüssel
+                    für das Schließfach bis zum Kündigungstermin beschriftet in einem Briefumschlag unter Angabe der Fachnummer im
+                    Sekretariat abgegeben wird.
+                    Das Fach muss am 30.06. leer und gesäubert sein. Eine schriftliche Kündigungsbestätigung erhält der Mieter auf
+                    ausdrücklichen und im Kündigungsschreiben geäußerten Wunsch. Bei zweckwidriger Nutzung des Schließfaches, z.B. Verstoß
+                    gegen die Hausordnung des KKG oder gegen einzelne Bestimmungen des Vertrages, ist der Vermieter berechtigt, den
+                    Mietvertrag mit sofortiger Wirkung unter Angabe des Grundes zu kündigen. In diesem Fall erfolgt keine Erstattung der
+                    Nutzungsgebühr für den Rest des Mietjahres.
+                </p>
+                <h2>3. Nutzungsgebühr</h2>
+                <p>
+                    Das Mietverhältnis kommt mit dem Eingang der fälligen Nutzungsgebühr zustande.
+                    <table>
+                        <tr>
+                            <th>Miete kleines Fach (A)</th>
+                            <td>25€</td>
+                        </tr>
+                        <tr>
+                            <th>Miete großes Fach (B)</th>
+                            <td>30€</td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    Die Miete wird bis zum Ablauf des Vertrages nicht erhöht. Wird das Mietverhältnis während eines laufenden Schuljahres
+                    abgeschlossen, ist die Miete für das schon begonnene Schuljahr anteilig zu entrichten. Bei ausstehenden Nutzungsgebühren ist
+                    der Vermieter zur sofortigen Kündigung berechtigt. Der Anspruch auf die Zahlung bleibt hiervon unberührt.
+                    Bei Vertragsabschluss ist eine Kaution von 15 € je Schließfach fällig. Sie wird mit der ersten Miete eingezogen.
+                    Bei unbeschädigter und sauberer Rückgabe des Schließfaches und des/der Schlüssel wird die Sicherheitsleistung erstattet.
+                    Hierzu sind die Bankdaten für die Erstattung mitzuteilen. Die Erstattung erfolgt bis zum 31.10. des Jahres der Beendigung.
+                </p>
+                <h2>4. Untervermietung</h2>
+                <p>Die Untervermietung des Schulschließfaches ist unzulässig</p>
+                <h2>5. Sonstige Pflichten des Mieters</h2>
+                <p>
+                    Der Mieter/Nutzer verpflichtet sich, das Schließfach pfleglich zu behandeln und sauber zu halten. Äußerliche
+                    Beschmutzungen(z.B. Graffitties) und Mängel (z.B. klemmende Schlösser) sind umgehend dem Vermieter schriftlich mitzuteilen.
+                    Am Schuljahresende ist das Fach restlos leer zu räumen. Während der Sommerferien werden vom Vermieter Wartungsarbeiten
+                    durchgeführt.
+                    Die Versicherung des Schließfachinhaltes wird vom Vermieter grundsätzlich nicht übernommen, eine Haftung des Vermieters ist
+                    ausgeschlossen.
+                </p>
+                <h2>6. Sonstige Vereinbarungen</h2>
+                <p>Die Schülerfirma ist im Besitz eines Hauptschlüssels. Sie ist berechtigt, das Schließfach in tatsächlichen oder mutmaßlichen
+                    Gefahrensituationen zu öffnen.
+                    Im Falle von Problemen mit der Nutzung des Schließfaches wenden sich der Mieter bzw. der Nutzer schriftlich (Postfach im
+                    Sekretariat) oder per E-Mail (<a href="mailto:schliessfach@kkos.net">schliessfach@kkos.net</a>) an die Schülerfirma. Alle Nutzer tragen dazu bei, dass mit allen
+                    Schulschließfachschränken fürsorglich umgegangen wird und insbesondere Verschmutzungen und unsachgemäße Nutzung
+                    vermieden werden.
+                    Der Mietvertrag wird durch die Schülerfirma aufbewahrt; er ist vor Mietbeginn vollständig ausgefüllt mit der
+                    Einzugsermächtigung zu übergeben. Nur bei vollständigen Angaben kann der Antrag bearbeitet werden. Die Anträge werden
+                    nach Verfügbarkeit in der Reihenfolge ihres Eingangs bearbeitet.
+                    Die Vertragsparteien haben keine mündlichen Nebenabreden getroffen. Wenn eine Bestimmung des Vertrages ungültig sein
+                    oder werden sollte, so wird dadurch die Geltung des Vertrages insgesamt nicht berührt. An Stelle dieser Bestimmung ist eine ihr
+                    dem Sinne und der wirtschaftlichen Bedeutung nach möglichst nahe kommende andere Bestimmung zwischen den Parteien zu
+                    vereinbaren. Jede Vereinbarung bedarf der Schriftform
+                </p>
+                <h2>Bitte beim Ausfüllen beachten:</h2>
+                <p>
+                    Der Mieter muss volljährig sein: Erziehungsberechtigter des Nutzers oder volljährige(r) Schüler(in).
+                    Der Nutzer muss Schüler bzw. Schülerin des KKG sein.
+                    Es soll die Klasse angegeben werden, die der Nutzer im kommenden Schuljahr (also nach den Sommerferien) besuchen wird.
+                    Die Körpergröße wird erfragt, um bei Wahlmöglichkeit die Höhe des Schließfaches berücksichtigen zu können.
+                    Der vollständig ausgefüllte Vertrag ist der Schülerfirma (Postfach im Sekretariat) schnellstmöglich nach Aushändigung zu
+                    übergeben. Zusendung per Mail oder Fax sind ausgeschlossen.
+                </p>
+            </div>
+        </div>
+        <div id="inputs">
+            <h1>Informationen</h1>
+            <h2>Mieter:</h2>
+            <p>Name des Mieters: <input type="text" class="inp" id="renterLastName"></p>
+            <p>Vorname des Mieters: <input type="text" class="inp" id="renterFirstName"></p>
+            <p>Telefon Privat: <input type="text" class="inp" id="renterPhone"></p>
+            <p>E-Mail <input type="text" class="inp" id="renterEmail"></p>
+            <h2>Nutzer:</h2>
+            <p>Name des Nutzers: <input type="text" class="inp" id="userLastName"></p>
+            <p>Vorname des Nutzers: <input type="text" class="inp" id="userFirstName"></p>
+            <p>Telefon: <input type="text" class="inp" id="userPhone"></p>
+            <p>E-Mail: <input type="text" class="inp" id="userEmail"></p>
+            <p>Derzeitige Körpergröße des Nutzers in cm: <input type="number" value="160" min="50" max="250" class="numInp" id="userHeight"></p>
+            <h2> </h2>
+            <p>Jahr bei beginn der Anmietung: <input type="number" min="1971" max="2038" value="2022" class="numInp" id="beginYear"></p>
+            <p>Klasse bei beginn der Anmietung: <input type="text" class="inp" id="beginClass"></p>
+            <h2> </h2>
+            <p>Gewünschte Fachgröße:
+                <form id="size">
+                    <input type="radio" name="size" value="a" id="a" checked>
+                    <label for="a"><b>A (klein)</b></label>
+                    <input type="radio" name="size" value="b" id="b">
+                    <label for="b"><b>B (groß)</b></label>
+                </form>
+            </p>
+            <h2>SEPA-Lastschriftmandat</h2>
+            <p class="legal-sepa-text">
+                Hiermit ermächtige ich den „Förderverein des Käthe-Kollwitz-Gymnasiums Berlin Prenzlauer Berg e.V.“ die Beträge für ein Schließfach der Schule jährlich, sowie beim Erstvertrag zzgl. eine Kaution in Höhe von 15,00 € von meinem unten stehenden Konto mittels Lastschrift einzuziehen.
+                Zugleich weise ich mein Kreditinstitut an, die vom Förderverein des Käthe Kollwitz Gymnasium e.V. auf mein Konto gezogenen Lastschriften einzulösen.
+                Wenn mein Konto die erforderliche Deckung nicht aufweist, besteht seitens des kontoführenden Instituts keine Verpflichtung zur Einlösung.
+            </p>
+            <p>für das Kind: <input type="text" id="sepa-childName" class="inp"></p>
+            <p>Kontoinhaber (Vor- und Nachname): <input type="text" id="sepa-name" class="inp"></p>
+            <p>Name des Kreditinstituts: <input type="text" id="sepa-bankName" class="inp"></p>
+            <p>
+                <div class="letter-input" id="iban-input">
+                    <p id="iban-label">IBAN-Nr.:</p>
+                    <p><b>DE</b></p>
+                    <input required type="text" name="letter1" class="iban letter" maxlength="1">
+                    <input required type="text" name="letter2" class="iban letter" maxlength="1">
+                    <p>/</p>
+                    <input required type="text" name="letter3" class="iban letter" maxlength="1">
+                    <input required type="text" name="letter4" class="iban letter" maxlength="1">
+                    <input required type="text" name="letter5" class="iban letter" maxlength="1">
+                    <input required type="text" name="letter6" class="iban letter" maxlength="1">
+                    <p>/</p>
+                    <input required type="text" name="letter7" class="iban letter" maxlength="1">
+                    <input required type="text" name="letter8" class="iban letter" maxlength="1">
+                    <input required type="text" name="letter9" class="iban letter" maxlength="1">
+                    <input required type="text" name="letter10" class="iban letter" maxlength="1">
+                    <p>/</p>
+                    <input required type="text" name="letter11" class="iban letter" maxlength="1">
+                    <input required type="text" name="letter12" class="iban letter" maxlength="1">
+                    <input required type="text" name="letter13" class="iban letter" maxlength="1">
+                    <input required type="text" name="letter14" class="iban letter" maxlength="1">
+                    <p>/</p>
+                    <input required type="text" name="letter15" class="iban letter" maxlength="1">
+                    <input required type="text" name="letter16" class="iban letter" maxlength="1">
+                    <input required type="text" name="letter17" class="iban letter" maxlength="1">
+                    <input required type="text" name="letter18" class="iban letter" maxlength="1">
+                    <p>/</p>
+                    <input required type="text" name="letter19" class="iban letter" maxlength="1">
+                    <input required type="text" name="letter20" class="iban letter" maxlength="1">
+                </div>
         </p>
+            <p>
+                <div class="letter-input" id="bic-input">
+                    <p id="bic-label">BIC (SWIFT-Code):</p>
+                    <input required type="text" name="letter1" class="bic letter" maxlength="1">
+                    <input required type="text" name="letter2" class="bic letter" maxlength="1">
+                    <input required type="text" name="letter3" class="bic letter" maxlength="1">
+                    <input required type="text" name="letter4" class="bic letter" maxlength="1">
+                    <input required type="text" name="letter5" class="bic letter" maxlength="1">
+                    <input required type="text" name="letter6" class="bic letter" maxlength="1">
+                    <input required type="text" name="letter7" class="bic letter" maxlength="1">
+                    <input required type="text" name="letter8" class="bic letter" maxlength="1">
+                    <p>/</p>
+                    <input required type="text" name="letter9" class="bic letter" maxlength="1">
+                    <input required type="text" name="letter10" class="bic letter" maxlength="1">
+                    <input required type="text" name="letter11" class="bic letter" maxlength="1">
+                </div>
+            </p>
+            <p>Dieses Mandat gilt ab: <input type="date" id="sepa-date"></p>
+            <button class="submitBtn" onclick="submit()">Kostenpflichtig bestellen</button>
+        </div>
     </body>
 </html>

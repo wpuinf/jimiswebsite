@@ -1,4 +1,6 @@
-let regex = {
+const inputs = document.querySelectorAll('input[type="text"]');
+const enterKeyCode = 13;
+const regex = {
     bic: /[A-Z]{4}DE[A-Z0-9]{2}([0-9]{3})?/,
     iban: /DE\d{2}( )?(\d{4}\1){4}\d{2}/,
     year: /20[0-9]{2}/,
@@ -6,86 +8,115 @@ let regex = {
     email: /^\S+@\S+\.\S+$/
 }
 
-let inputs = ['renterSurname', 'renterFirstName', 'renterTelephone', 'userSurname', 'userFirstName', 'userTelephone', 'userHeight', 'child', 'owner', 'bank', 'applys'];
-let regexInputs = [{name: 'renterEmail', regex: regex.email}, {name: 'userEmail', regex: regex.email}, {name: 'beginYear', regex: regex.year}, {name: 'beginClass', regex: regex.class}, {name: 'iban', regex: regex.iban}, {name: 'bic', regex: regex.bic}];
+const noRegex = ['renterLastName', 'renterFirstName', 'renterPhone', 'userLastName', 'userFirstName', 'userPhone', 'sepa-childName', 'sepa-name', 'sepa-bankName', 'sepa-date', 'userHeight', 'beginYear'];
+const hasRegex = [{'id': 'renterEmail', 'regex': regex.email}, {'id': 'userEmail', 'regex': regex.email}, {'id': 'beginClass', 'regex': regex.class}];
 
-document.getElementById('beginYear').value = new Date().getFullYear();
+document.getElementById('contractText').style.display = 'none';
+
+for (let i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener('keydown', (e) => {
+        if (e.keyCode === enterKeyCode) {
+            inputs[i].blur();
+            if (inputs[i + 1]) inputs[i + 1].focus();
+        }
+    });
+}
+
+function getBoxes(id) {
+    let num = '';
+    const elements = document.querySelectorAll(`${id} input`);
+    for (const element of elements) {
+        num += element.value;
+    }
+    return num;
+}
 
 function submit() {
     let gtg = true;
-
-    for (let input of inputs) {
-        input = document.getElementById(input);
-        if (!input.value) {
-            input.labels[0].style.color = 'red';
+    for (const element of noRegex) {
+        if (!document.getElementById(element).value) {
+            document.getElementById(element).parentElement.classList.add('error');
             gtg = false;
         } else {
-            input.labels[0].style.color = 'black';
+            document.getElementById(element).parentElement.classList.remove('error');
         }
     }
 
-    for (let regexInput of regexInputs) {
-        let input = document.getElementById(regexInput.name);
-        if (!regexInput.regex.test(input.value)) {
-            input.labels[0].style.color = 'red';
+    for (const element of hasRegex) {
+        if (!document.getElementById(element.id).value.match(element.regex)) {
+            document.getElementById(element.id).parentElement.classList.add('error');
             gtg = false;
         } else {
-            input.labels[0].style.color = 'black';
+            document.getElementById(element.id).parentElement.classList.remove('error');
         }
     }
 
-    if (!document.getElementsByName('size')[0].checked && !document.getElementsByName('size')[1].checked) {
-        document.getElementById('sizeLabel').style.color = 'red';
+    const iban = `DE${getBoxes('#iban-input')}`;
+    const bic = getBoxes('#bic-input');
+
+    if (!iban.match(regex.iban)) {
+        document.getElementById('iban-label').classList.add('error');
         gtg = false;
     } else {
-        document.getElementById('sizeLabel').style.color = 'black';
+        document.getElementById('iban-label').classList.remove('error');
     }
 
-    if(!document.getElementById('readContract').checked) {
-        document.getElementById('readContract').labels[0].style.color = 'red';
+    if (!bic.match(regex.bic)) {
+        document.getElementById('bic-label').classList.add('error');
         gtg = false;
     } else {
-        document.getElementById('readContract').labels[0].style.color = 'black';
+        document.getElementById('bic-label').classList.remove('error');
     }
 
     if (gtg) {
-        let data = {
-            "renter": {
-                "firstName": document.getElementById('renterFirstName').value,
-                "surname": document.getElementById('renterSurname').value,
-                "contact": {
-                    "email": document.getElementById('renterEmail').value,
-                    "phone": document.getElementById('renterTelephone').value
-                }
-            },
-            "user": {
-                "firstName": document.getElementById('userFirstName').value,
-                "surname": document.getElementById('userSurname').value,
-                "height": document.getElementById('userHeight').value,
-                "contact": {
-                    "email": document.getElementById('userEmail').value,
-                    "phone": document.getElementById('userTelephone').value
-                }
-            },
-            "beginYear": document.getElementById('beginYear').value,
-            "beginClass": document.getElementById('beginClass').value,
-            "size": document.getElementsByName('size').values,
-            "sepa": {
-                "forChild": document.getElementById('child').value,
-                "name": document.getElementById('owner').value,
-                "bankName": document.getElementById('bank').value,
-                "iban": document.getElementById('iban').value,
-                "bic": document.getElementById('bic').value,
-                "applysFrom": document.getElementById('applys').value
-            }
-        }
-
-        fetch('http://localhost:3000/submit', {
+        fetch('https://jimiswebsite-api.herokuapp.com', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
-        })
+            body: JSON.stringify({
+                renter: {
+                    firstName: document.getElementById('renterFirstName').value,
+                    lastName: document.getElementById('renterLastName').value,
+                    contact: {
+                        email: document.getElementById('renterEmail').value,
+                        phone: document.getElementById('renterPhone').value
+                    }
+                },
+                user: {
+                    firstName: document.getElementById('userFirstName').value,
+                    lastName: document.getElementById('userLastName').value,
+                    height: parseInt(document.getElementById('userHeight').value),
+                    contact: {
+                        email: document.getElementById('userEmail').value,
+                        phone: document.getElementById('userPhone').value
+                    }
+                },
+                beginYear: parseInt(document.getElementById('beginYear').value),
+                beginClass: document.getElementById('beginClass').value,
+                size: document.querySelector('input[name=size]:checked').value ,
+                sepa: {
+                    forChild: document.getElementById('sepa-childName').value,
+                    name: document.getElementById('sepa-name').value,
+                    bankName: document.getElementById('sepa-bankName').value,
+                    iban: iban,
+                    bic: bic,
+                    applysFrom: document.getElementById('sepa-date').value
+                }
+            })
+        }).then(request =>  {
+            if (request.status === 200) alert('Anfrage wurde erfolgreich gespeichert.');
+            else alert('Es ist ein Fehler aufgetreten. Bitte versuche es später noch einmal oder wende dich an (EMAIL).');
+        });
     }
 }
+
+function changeContractVisibility() {
+    if (document.getElementById('contractText').style.display === 'none') {
+        document.getElementById('contractText').style.display = 'block';
+        document.getElementById('showContract').innerHTML = '▲ <span>Vertrag ausblenden</span>';
+    } else {
+        document.getElementById('contractText').style.display = 'none';
+        document.getElementById('showContract').innerHTML = '▼ <span>Vertrag anzeigen</span>';
+    }
+};
