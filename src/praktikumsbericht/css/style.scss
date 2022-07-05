@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500&family=Merriweather&family=Ubuntu&display=swap');
+
+body {
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    width: 21cm;
+    height: 29.7cm;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+
+    #header {
+        margin-left: 10%;
+        margin-right: 10%;
+        border-bottom: 3px solid rgb(179, 179, 179);
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            font-family: 'Ubuntu', sans-serif;
+            margin-bottom: 10px;
+        }
+    }
+
+    h1.heading {
+        font-family: 'Merriweather', serif;
+        font-size: 4vw;
+        margin: 0;
+        color: rgb(179, 0, 0);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-weight: 1;
+        margin-left: 15%;
+        margin-right: 15%;
+        border-bottom: 2px solid rgb(179, 179, 179);
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: center;
+    }
+
+    div#company {
+        background-color: rgb(235, 235, 235);
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        flex-wrap: wrap;
+        margin-right: 10%;
+        margin-left: auto;
+
+        h1 {
+            font-size: 1.5em;
+            font-family: 'Heebo', sans-serif;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        ul {
+            padding-left: 20px;
+            padding-bottom: 20px;
+            border-bottom: dotted 3px black;
+
+            li {
+                font-family: 'Ubuntu', sans-serif;
+                font-size: 1em;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    ul#stars {
+        color: rgb(212, 212, 0);
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        bottom: 0;
+        left: 16px;
+
+        li {
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            font-size: 5em;
+        }
+    }
+}

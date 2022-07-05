@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@500&family=Merriweather&family=Ubuntu&display=swap");
+body {
+  background-color: gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#container {
+  width: 21cm;
+  height: 29.7cm;
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+}
+#container #header {
+  margin-left: 10%;
+  margin-right: 10%;
+  border-bottom: 3px solid rgb(179, 179, 179);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#container #header p {
+  font-family: "Ubuntu", sans-serif;
+  margin-bottom: 10px;
+}
+#container h1.heading {
+  font-family: "Merriweather", serif;
+  font-size: 4vw;
+  margin: 0;
+  color: rgb(179, 0, 0);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 1;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-bottom: 2px solid rgb(179, 179, 179);
+  margin-bottom: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#container div#company {
+  background-color: rgb(235, 235, 235);
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: 10%;
+  margin-left: auto;
+}
+#container div#company h1 {
+  font-size: 1.5em;
+  font-family: "Heebo", sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#container div#company ul {
+  padding-left: 20px;
+  padding-bottom: 20px;
+  border-bottom: dotted 3px black;
+}
+#container div#company ul li {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1em;
+}
+#container div#company ul li span {
+  font-weight: bold;
+}
+#container ul#stars {
+  color: rgb(212, 212, 0);
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
+#container ul#stars li {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 5em;
+}
