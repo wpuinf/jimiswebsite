@@ -42,39 +42,6 @@ body {
         justify-content: center;
     }
 
-    div#company {
-        background-color: rgb(235, 235, 235);
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        width: 30%;
-        flex-wrap: wrap;
-        margin-right: 10%;
-        margin-left: auto;
-
-        h1 {
-            font-size: 1.5em;
-            font-family: 'Heebo', sans-serif;
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-        
-        ul {
-            padding-left: 20px;
-            padding-bottom: 20px;
-            border-bottom: dotted 3px black;
-
-            li {
-                font-family: 'Ubuntu', sans-serif;
-                font-size: 1em;
-
-                span {
-                    font-weight: bold;
-                }
-            }
-        }
-    }
-
     ul#stars {
         color: rgb(212, 212, 0);
         list-style: none;
@@ -88,6 +55,50 @@ body {
         li {
             text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
             font-size: 5em;
+        }
+    }
+
+    div#content {
+        margin-right: 10%;
+        margin-left: 10%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        div#text {
+            width: 50%;
+            font-size: 0.9em;
+        }
+
+        div#company {
+            background-color: rgb(235, 235, 235);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            flex-wrap: wrap;
+    
+            h1 {
+                font-size: 1.5em;
+                font-family: 'Heebo', sans-serif;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            
+            ul {
+                padding-left: 20px;
+                padding-bottom: 20px;
+                border-bottom: dotted 3px black;
+    
+                li {
+                    font-family: 'Ubuntu', sans-serif;
+                    font-size: 1em;
+    
+                    span {
+                        font-weight: bold;
+                    }
+                }
+            }
         }
     }
 }
